@@ -1,6 +1,3 @@
-
-console.log('hi')
-
 var strt = document.querySelector('#start')
 
 function timer(){
