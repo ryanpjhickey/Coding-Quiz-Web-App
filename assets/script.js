@@ -1,14 +1,14 @@
 
 console.log('hi')
 
-var strt = document.querySelector('start')
+var strt = document.querySelector('#start')
 
 function timer(){
     var counter = 60;
    setInterval(function() {
      counter--;
       if (counter >= 0) {
-         span = document.querySelector('timeleft');
+         span = document.querySelector('#timeleft');
          span = counter;
       }
       if (counter === 0) {
@@ -19,7 +19,7 @@ function timer(){
 
 function timerdisplay() {
     var disp = timer();
-    document.querySelector.value = disp;
+    document.querySelector('#timeleft').value = disp;
 }
 
 strt.addEventListener('click', timer)
