@@ -41,6 +41,10 @@ var timerA = document.querySelector('#timer');
 
 var startQuiz = document.querySelector('#start');
 
+var hide = document.querySelector('#hide');
+
+var hide2 = document.querySelector('#hide2');
+
 var counter = 61;
 
 startQuiz.addEventListener('click', setCounterText);
@@ -50,7 +54,10 @@ timerA.innerHTML = "60";
 function setCounterText() { 
   console.log(counter);
   counter--;
-    timerA.innerHTML = counter;
+  timerA.innerHTML = counter;
+  startQuiz.style.display = 'none';
+  hide.style.display = 'none';
+  hide2.style.display = 'none';
   if(counter === 60){
     var countdown = setInterval(setCounterText, 1000);
   } else if(counter <= -1){
