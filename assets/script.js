@@ -37,21 +37,23 @@
 // Add event listener to generate button
 //generateBtn.addEventListener('click', writePassword);
 
-var timerA = document.querySelector('#timer')
+var timerA = document.querySelector('#timer');
 
-var startQuiz = document.querySelector('#start')
+var startQuiz = document.querySelector('#start');
 
-var counter = 60
+var counter = 60;
 
-function setCounterText() {
-  timerA.textContent = counter
-}
+startQuiz.addEventListener('click', setCounterText);
 
-startQuiz.addEventListener('click', function() { 
-  if(counter === 0){
+function setCounterText() { 
+  console.log(counter);
+  counter--;
+  if(counter === -1){
     clearInterval(countdown);
   } else {
-    timerA = counter}
-});
+    timerA.innerHTML = counter};
+  if(counter === 59){
+    var countdown = setInterval(setCounterText, 1000)
+  }
+};
 
-var countdown = setInterval(setCounterText, 1000)
