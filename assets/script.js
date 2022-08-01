@@ -48,10 +48,10 @@ function setCounterText() {
 }
 
 startQuiz.addEventListener('click', function() { 
-  counter--;
   if(counter === 0){
-    clearInterval(countdown)
-  }
+    clearInterval(countdown);
+  } else {
+    timerA = counter}
 });
 
 var countdown = setInterval(setCounterText, 1000)
