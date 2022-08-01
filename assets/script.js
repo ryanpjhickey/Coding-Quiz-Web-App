@@ -50,12 +50,10 @@ timerA.innerHTML = "60";
 function setCounterText() { 
   console.log(counter);
   counter--;
-  if(counter === -1){
-    clearInterval(countdown);
-  } else {
-    timerA.innerHTML = counter};
+    timerA.innerHTML = counter;
   if(counter === 60){
-    var countdown = setInterval(setCounterText, 1000)
-  }
-};
-
+    var countdown = setInterval(setCounterText, 1000);
+  } else if(counter <= -1){
+      timerA.innerHTML = "0"
+    }
+  };
