@@ -59,7 +59,8 @@ function setCounterText() {
   if(counter === 60){
     countdown = setInterval(setCounterText, 1000);
   } else if(counter <= -1){
-      timerA.innerHTML = "0"
+      timerA.innerHTML = "0";
+      clearInterval(countdown);
     }
   };
 
