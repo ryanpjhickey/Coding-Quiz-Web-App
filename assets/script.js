@@ -41,9 +41,11 @@ var timerA = document.querySelector('#timer');
 
 var startQuiz = document.querySelector('#start');
 
-var counter = 60;
+var counter = 61;
 
 startQuiz.addEventListener('click', setCounterText);
+
+timerA.innerHTML = "60";
 
 function setCounterText() { 
   console.log(counter);
@@ -52,7 +54,7 @@ function setCounterText() {
     clearInterval(countdown);
   } else {
     timerA.innerHTML = counter};
-  if(counter === 59){
+  if(counter === 60){
     var countdown = setInterval(setCounterText, 1000)
   }
 };
