@@ -1,22 +1,11 @@
-var strt = document.querySelector('#start')
+var counter = 60
+var countdown = function(){
+  counter--;
+  if(counter === 0) {
+    clearInterval(strtcd);
+  };
+};
 
-function timer(){
-    var counter = 60;
-   setInterval(function() {
-     counter--;
-      if (counter >= 0) {
-         span = document.querySelector('#timeleft');
-         span = counter;
-      }
-      if (counter === 0) {
-         clearInterval(counter);
-       }
-     }, 1000);
-}
+var strtcd = setInterval(countdown, 1000);
 
-function timerdisplay() {
-    var disp = timer();
-    document.querySelector('#timeleft').value = disp;
-}
-
-strt.addEventListener('click', timer)
+strt.addEventListener('click', countdown)
