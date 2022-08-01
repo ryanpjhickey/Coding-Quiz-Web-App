@@ -38,3 +38,20 @@
 //generateBtn.addEventListener('click', writePassword);
 
 var timerA = document.querySelector('#timer')
+
+var startQuiz = document.querySelector('#start')
+
+var counter = 60
+
+function setCounterText() {
+  timerA.textContent = counter
+}
+
+startQuiz.addEventListener('click', function() { 
+  counter--;
+  if(counter === 0){
+    clearInterval(countdown)
+  }
+});
+
+var countdown = setInterval(setCounterText, 1000)
