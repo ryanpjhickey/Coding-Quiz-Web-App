@@ -8,7 +8,7 @@
 
 <div class="hs">
     <a href=""><p>View high scores</p></a>
-    <p class="time">Time:<span id="timer"></span></p>
+    <p class="time">Time:<span id="timer"></span><span id="timerC"></span></p>
 </div>
 
 <body>
@@ -17,11 +17,28 @@
     <h1 id="q1"></h1>
     <h1 id="q2"></h1>
     <h1 id="q3"></h1>
+    <h1 id="alldone"></h1>
 </body>
 
 </main>
 
-<h4 class="place" id="hide2"><p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p></h4>
+<h4 class="place" id="hide2">
+    <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+</h4>
+
+<div class="place"><p id="urScore">Your final score is <span id="timerB"></span>
+</p>
+</div>
+
+<div class="place">
+    <p id="initials">Enter your initials: 
+    <input type="text" id="hiScoreAdd">
+    <button class="btn btn-info" id="Submit">Submit</button>
+</p>
+</div>
+<div>
+<ul id="scoreList"></ul>
+</div>
 
 <div class="cent">
 <button class="btn btn-info" id="start">Start Quiz</button>
