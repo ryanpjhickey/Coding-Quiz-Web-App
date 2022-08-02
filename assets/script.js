@@ -98,7 +98,7 @@ function setCounterText() {
     counter = counter - 10;
   }
 
-   function addQ2() {
+  function addQ2() {
     a1q1.style.display = 'none'
     a2q1.style.display = 'none'
     a3q1.style.display = 'none'
@@ -117,19 +117,19 @@ function setCounterText() {
     var q2a2 = document.querySelector('#a2q2');
     var q2ans2 = document.createElement("div");
     q2ans2.textContent = "2. Answer2";
-    q2a2.appendChild(q2ans1);
+    q2a2.appendChild(q2ans2);
     q2a2.style.display = 'inline';
     q2a2.addEventListener('click', wrongAns)
     var q2a3 = document.querySelector('#a3q2');
     var q2ans3 = document.createElement("div");
     q2ans3.textContent = "2. Answer2";
-    q2a3.appendChild(q2ans1);
+    q2a3.appendChild(q2ans3);
     q2a3.style.display = 'inline';
     q2a3.addEventListener('click', wrongAns)
     var q2a4 = document.querySelector('#a4q2');
     var q2ans4 = document.createElement("div");
     q2ans4.textContent = "2. Answer2";
-    q2a4.appendChild(q2ans1);
+    q2a4.appendChild(q2ans4);
     q2a4.style.display = 'inline';
     q2a4.addEventListener('click', wrongAns)
   }
