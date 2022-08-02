@@ -30,13 +30,6 @@ function setCounterText() {
   var a2q1 = document.querySelector('#a2q1')
   var a3q1 = document.querySelector('#a3q1')
   var a4q1 = document.querySelector('#a4q1')
- // var a1q2 = document.querySelector('#a1q2')
- // var a1q2 = document.querySelector('#a2q2')
- // var a1q2 = document.querySelector('#a3q2')
- // var a1q2 = document.querySelector('#a4q2')
-
-
-
 
   a1q1.style.display = "none"
   a2q1.style.display = "none"
@@ -50,14 +43,6 @@ function setCounterText() {
   document.querySelector('#a2q3').style.display = "none"
   document.querySelector('#a3q3').style.display = "none"
   document.querySelector('#a4q3').style.display = "none"
-
-
-
-
-
-
-
-
 
   function addQ1() {
     startQuiz.style.display = 'none';
@@ -81,13 +66,13 @@ function setCounterText() {
     a2q1.addEventListener('click', wrongAns)
     var q1a3 = document.querySelector('#a3q1');
     var q1ans3 = document.createElement("div");
-    q1ans3.textContent = "3. cows";
+    q1ans3.textContent = "3. alerts";
     q1a3.appendChild(q1ans3);
     q1a3.style.display = 'inline';
-    a3q1.addEventListener('click', wrongAns)
+    a3q1.addEventListener('click', correctAns)
     var q1a4 = document.querySelector('#a4q1');
     var q1ans4 = document.createElement("div");
-    q1ans4.textContent = "4. JQuery";
+    q1ans4.textContent = "4. numbers";
     q1a4.appendChild(q1ans4);
     q1a4.style.display = 'inline';
     a4q1.addEventListener('click', wrongAns)
@@ -99,11 +84,15 @@ function setCounterText() {
 
   function wrongAns() {
     var incorrect = document.querySelector('#wrong');
-    var wrong = document.createElement('p');
     wrong.textContent = 'Wrong!';
-    incorrect.appendChild(wrong);
     incorrect.style.display ='inline'
     counter = counter - 10;
+  }
+
+  function correctAns() {
+    var incorrect = document.querySelector('#wrong');
+    wrong.textContent = 'Correct!';
+    incorrect.style.display ='inline'
   }
 
   function addQ2() {
