@@ -27,6 +27,17 @@ function setCounterText() {
 
 
   var a1q1 = document.querySelector('#a1q1')
+  var a2q1 = document.querySelector('#a2q1')
+  var a3q1 = document.querySelector('#a3q1')
+  var a4q1 = document.querySelector('#a4q1')
+  var a1q2 = document.querySelector('#a1q2')
+  var a1q2 = document.querySelector('#a2q2')
+  var a1q2 = document.querySelector('#a3q2')
+  var a1q2 = document.querySelector('#a4q2')
+
+
+
+
   a1q1.style.display = "none"
   a2q1.style.display = "none"
   a3q1.style.display = "none"
@@ -53,28 +64,32 @@ function setCounterText() {
     q1ans1.textContent = "1. strings";
     q1a1.appendChild(q1ans1);
     q1a1.style.display = 'inline';
-    a1q1.addEventListener('click', s1a1)
+    a1q1.addEventListener('click', wrongAns)
     var q1a2 = document.querySelector('#a2q1');
     var q1ans2 = document.createElement("div");
     q1ans2.textContent = "2. booleans";
     q1a2.appendChild(q1ans2);
     q1a2.style.display = 'inline';
-    a2q1.addEventListener('click', s1a1)
+    a2q1.addEventListener('click', wrongAns)
     var q1a3 = document.querySelector('#a3q1');
     var q1ans3 = document.createElement("div");
     q1ans3.textContent = "3. cows";
     q1a3.appendChild(q1ans3);
     q1a3.style.display = 'inline';
-    a3q1.addEventListener('click', s1a1)
+    a3q1.addEventListener('click', wrongAns)
     var q1a4 = document.querySelector('#a4q1');
     var q1ans4 = document.createElement("div");
     q1ans4.textContent = "4. JQuery";
     q1a4.appendChild(q1ans4);
     q1a4.style.display = 'inline';
-    a4q1.addEventListener('click', s1a1)
+    a4q1.addEventListener('click', wrongAns)
+    a1q1.addEventListener('click', addQ2)
+    a2q1.addEventListener('click', addQ2)
+    a3q1.addEventListener('click', addQ2)
+    a4q1.addEventListener('click', addQ2)
   }
 
-  function s1a1() {
+  function wrongAns() {
     var incorrect = document.querySelector('#wrong');
     var wrong = document.createElement('p');
     wrong.textContent = 'Wrong!';
@@ -84,6 +99,11 @@ function setCounterText() {
   }
 
   function addQ2() {
+    a1q1.display.style = 'none'
+    a2q1.display.style = 'none'
+    a3q1.display.style = 'none'
+    a4q1.display.style = 'none'
+    q1.display.style = 'none'
     var q2add = document.querySelector('#q2');
     var q2 = document.createElement("p");
     q2.textContent = "Q2 placeholder";
@@ -93,5 +113,5 @@ function setCounterText() {
     q2ans1.textContent = "1. strings";
     q2a1.appendChild(q1ans1);
     q2a1.style.display = 'inline';
-    a1q2.addEventListener('click', s1a1)
+    a1q2.addEventListener('click', wrongAns)
   }
