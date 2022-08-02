@@ -46,7 +46,6 @@ function setCounterText() {
   document.querySelector('#alldone').style.display = "none"
   document.querySelector('#urScore').style.display = "none"
   document.querySelector('#initials').style.display = "none"
-  document.querySelector('#urName').style.display = "none"
 
 
 
@@ -189,6 +188,7 @@ function setCounterText() {
     a4q3.style.display = 'none'
     q3.style.display = 'none'
     timerA.style.display='none'
+    document.querySelector('#wrong').style.display = "none";
     var allDoneAdd = document.querySelector('#alldone');
     var allDoneP = document.createElement("p");
     allDoneAdd.style.display = "inline";
@@ -200,12 +200,10 @@ function setCounterText() {
     document.querySelector('#timerB').innerHTML = counter;
     document.querySelector('#timerC').innerHTML = counter;
     document.querySelector('#initials').style.display = "inline"
-    document.querySelector('#urName').style.display = "inline"
     document.querySelector('#Submit').addEventListener('click', addUser)
   }
 
-    function addUser() {
-      var userInput = document.querySelector('#hiScoreAdd').value;
-      var listInput = userInput
-      document.querySelector('#scoreList').appendChild(listInput);
-    }
+   function addUser() {
+      var userInput = document.querySelector("#hiScoreAdd").value;
+      document.querySelector('#scoreList').textContent = userInput + '       ' + counter
+  }
