@@ -6,11 +6,16 @@ var hide = document.querySelector('#hide');
 
 var hide2 = document.querySelector('#hide2');
 
+// I defined my counter as 61 and once the function setCounterText subtracts 1 onclick to make var counter "60," it starts the countdown
 var counter = 61;
+
+//event listeners for startquiz button
 
 startQuiz.addEventListener('click', setCounterText);
 startQuiz.addEventListener('click', addQ1)
 
+
+//this initially displays the timer's value as 60, even though the counter is truly 61
 timerA.innerHTML = "60";
 
 function setCounterText() { 
@@ -19,7 +24,9 @@ function setCounterText() {
   timerA.innerHTML = counter;
   if(counter === 60){
     countdown = setInterval(setCounterText, 1000);
-  } else if(counter <= -1){
+  } 
+  //if counter is less than or equal to -1, clearInterval to stop counter
+  else if(counter <= -1){
       timerA.innerHTML = "0";
       clearInterval(countdown);
     }
@@ -30,6 +37,8 @@ function setCounterText() {
   var a2q1 = document.querySelector('#a2q1')
   var a3q1 = document.querySelector('#a3q1')
   var a4q1 = document.querySelector('#a4q1')
+
+//styling to display all ans/q's/end screen as hidden. To be revealed later on corresponding clicks
 
   a1q1.style.display = "none"
   a2q1.style.display = "none"
@@ -48,7 +57,7 @@ function setCounterText() {
   document.querySelector('#initials').style.display = "none"
 
 
-
+//function addQ1 forces original page elements to be hidden, and adds corresponding question elements, buttons, and text. It also adds event listeners to listen for a wrong answer button or correct answer button which then fires those functions accordingly.
   function addQ1() {
     startQuiz.style.display = 'none';
     hide.style.display = 'none';
@@ -87,6 +96,7 @@ function setCounterText() {
     a4q1.addEventListener('click', addQ2)
   }
 
+  //wrongAns displays Wrong! on the page and subtracts 10 from the counter
   function wrongAns() {
     var incorrect = document.querySelector('#wrong');
     wrong.textContent = 'Wrong!';
@@ -94,11 +104,15 @@ function setCounterText() {
     counter = counter - 10;
   }
 
+  //correctAns displays Correct! on the screen
+
   function correctAns() {
     var incorrect = document.querySelector('#wrong');
     wrong.textContent = 'Correct!';
     incorrect.style.display ='inline'
   }
+
+  //addQ2 removes all of the elements from addQ1 and replaces with question 2 elements
 
   function addQ2() {
     a1q1.style.display = 'none'
@@ -140,6 +154,8 @@ function setCounterText() {
     q2a4.addEventListener('click', addQ3)
   }
 
+  //addQ3 does the same as addQ2 in that it removes previous question elements, but this one also adds eventListeners to display end scoring page as well.
+
   function addQ3() {
     a1q2.style.display = 'none'
     a2q2.style.display = 'none'
@@ -180,6 +196,8 @@ function setCounterText() {
     q3a4.addEventListener('click', addScore)
   }
 
+  
+  //addScore adds all text, elements, and buttons for final scoring page
   function addScore()
   {
     a1q3.style.display = 'none'
@@ -203,6 +221,8 @@ function setCounterText() {
     document.querySelector('#Submit').addEventListener('click', addUser)
   }
 
+
+  //addUser allows user to input their own initials along with the score posted next to it
    function addUser() {
       var userInput = document.querySelector("#hiScoreAdd").value;
       document.querySelector('#scoreList').textContent = userInput + '       ' + counter
