@@ -6,6 +6,8 @@ var hide = document.querySelector('#hide');
 
 var hide2 = document.querySelector('#hide2');
 
+var hiScoreList = document.querySelector('#scoreList')
+
 // I defined my counter as 61 and once the function setCounterText subtracts 1 onclick to make var counter "60," it starts the countdown
 var counter = 61;
 
@@ -55,6 +57,7 @@ function setCounterText() {
   document.querySelector('#alldone').style.display = "none"
   document.querySelector('#urScore').style.display = "none"
   document.querySelector('#initials').style.display = "none"
+  document.querySelector('#scoreList').style.display = "none"
 
 
 //function addQ1 forces original page elements to be hidden, and adds corresponding question elements, buttons, and text. It also adds event listeners to listen for a wrong answer button or correct answer button which then fires those functions accordingly.
@@ -206,6 +209,7 @@ function setCounterText() {
     a4q3.style.display = 'none'
     q3.style.display = 'none'
     timerA.style.display='none'
+    document.querySelector('#scoreList').style.display = "inline"
     document.querySelector('#wrong').style.display = "none";
     var allDoneAdd = document.querySelector('#alldone');
     var allDoneP = document.createElement("p");
@@ -219,11 +223,34 @@ function setCounterText() {
     document.querySelector('#timerC').innerHTML = counter;
     document.querySelector('#initials').style.display = "inline"
     document.querySelector('#Submit').addEventListener('click', addUser)
+  } 
+
+
+  //addUser allows user to input their own initials and save their score into local storage
+   function addUser() {
+  var userInitials = document.querySelector("#hiScoreAdd").value;
+  var userScore = counter
+  var newScore = {
+    userInitials:userInitials,
+    userScore:userScore,
   }
 
+    console.log(newScore)
 
-  //addUser allows user to input their own initials along with the score posted next to it
-   function addUser() {
-      var userInput = document.querySelector("#hiScoreAdd").value;
-      document.querySelector('#scoreList').textContent = userInput + '       ' + counter
+    var hiScoreData = JSON.parse(localStorage.getItem("hiScores")) || []
+    hiScoreData.push(newScore)
+    localStorage.setItem("hiScores", JSON.stringify(hiScoreData))
+  }
+
+ //access the items from local storage and display them on the webpage
+  function displayHiScores() {
+    var hiScoreData = JSON.parse(localStorage.getItem("hiScores")) || []
+    console.log(hiScoreData)
+
+
+    for (let i = 0; i < hiScoreData.length; i++) {
+      var liEl = document.createElement("li")
+      liEl.textContent = hiScoreData[i].userInitials + ":" + hiScoreData[index].userScore
+      hiScoreList.appendChild(liEl)
+    }
   }
