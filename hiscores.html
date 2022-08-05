@@ -1,0 +1,49 @@
+<!doctype HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Quiz Week 1 High Scores</title>
+</head>
+
+    <h1>Coding Quiz High Scores</h1>
+
+
+
+<ul id="scoreList" class="place"></ul>
+<ul id="hiScoreAdd"></ul>
+
+<script>  
+
+var hiScoreList = document.querySelector('#scoreList')
+
+function addUser() {
+    var userInitials = document.querySelector("#hiScoreAdd").value;
+    var userScore = counter
+    var newScore = {
+      userInitials:userInitials,
+      userScore:userScore,
+    }
+  
+      console.log(newScore)
+  
+      var hiScoreData = JSON.parse(localStorage.getItem("hiScores")) || []
+      hiScoreData.push(newScore)
+      localStorage.setItem("hiScores", JSON.stringify(hiScoreData))
+    }
+  
+    function displayHiScores() {
+      var hiScoreData = JSON.parse(localStorage.getItem("hiScores")) || []
+      console.log(hiScoreData)
+  
+  
+      for (let index = 0; index < hiScoreData.length; index++) {
+        console.log(hiScoreData[index].userInitials)
+        var liEl = document.createElement("li")
+        liEl.textContent = hiScoreData[index].userInitials + ":" + hiScoreData[index].userScore
+        hiScoreList.appendChild(liEl)
+      }
+    }
+  
+    displayHiScores()</script>
+
+</html>

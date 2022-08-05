@@ -226,7 +226,7 @@ function setCounterText() {
   } 
 
 
-  //addUser allows user to input their own initials and save their score into local storage
+  //addUser allows user to input their own initials along with the score posted next to it
    function addUser() {
   var userInitials = document.querySelector("#hiScoreAdd").value;
   var userScore = counter
@@ -242,15 +242,17 @@ function setCounterText() {
     localStorage.setItem("hiScores", JSON.stringify(hiScoreData))
   }
 
- //access the items from local storage and display them on the webpage
   function displayHiScores() {
     var hiScoreData = JSON.parse(localStorage.getItem("hiScores")) || []
     console.log(hiScoreData)
 
 
-    for (let i = 0; i < hiScoreData.length; i++) {
+    for (let index = 0; index < hiScoreData.length; index++) {
+      console.log(hiScoreData[index].userInitials)
       var liEl = document.createElement("li")
-      liEl.textContent = hiScoreData[i].userInitials + ":" + hiScoreData[index].userScore
+      liEl.textContent = hiScoreData[index].userInitials + ":" + hiScoreData[index].userScore
       hiScoreList.appendChild(liEl)
     }
   }
+
+  displayHiScores()
