@@ -1,5 +1,5 @@
-# c4
-Challenge 4
+# Coding Quiz Challenge: Test your knowledge!
+Week 4 Challenge
 
 This website will allow users to take a quiz and view their score afterwards reflected by their time left. They can enter their initials as well on a list of high scores.
 
