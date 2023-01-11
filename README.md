@@ -20,7 +20,7 @@ This website will allow users to take a quiz and view their score afterwards ref
 
 ## Link
 
-Site link: https://ryanpjhickey.github.io/Coding-Challenge-Quiz-Test-your-knowledge-/
+Site link: https://ryanpjhickey.github.io/CodingQuiz-Test-your-Knowledge/
 
 ---
 
