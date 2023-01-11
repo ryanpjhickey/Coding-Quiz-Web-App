@@ -14,7 +14,7 @@
 
 ## Description
 
-This website will allow users to take a quiz and view their score afterwards reflected by their time left. They can enter their initials as well on a list of high scores.
+This website will allow users to take a quiz and view their score afterwards reflected by their time left. They can enter their initials as well on a list of high scores. It utilizes dynamic rendering and hidden elements to display individual questions.
 
 ---
 
